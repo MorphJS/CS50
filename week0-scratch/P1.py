@@ -2,8 +2,12 @@
 
 client = OpenAI()
 
+user_prompt = input("Promp: ")
+system_prompt = "Limit your answer to one sentence. Pretend youre a cat."
+
 response = client.responses.create(
-    input="In one sentence, what is CS50?",
+    input=prompt,
+    instructions=system_prompt,
     model="gpt-5"
 )
 
